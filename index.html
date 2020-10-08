@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+            BINGO CHALLENGE!!!
+            Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+            Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+            EXTRA: 
+            - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+            - Create a USER BOARD with random 24 numbers that highlights as the main board does
+            - Let the user choose HOW MANY user boards he's willing to play with and create them.
+        -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--:::::::::::::::::CSS::::::::::::::::::::::-->
+    <style>
+      #bingoBtn {
+        width: 200px;
+        height: 50px;
+        border-radius: 8px;
+        border: none;
+        background-color: #5ae44e;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        font-weight: 800;
+        box-shadow: 0px 10px 10px rgba(156, 243, 129, 0.5);
+        display: block;
+        margin: auto;
+      }
+    </style>
+
+    <!--:::::::::::::::::BINGO BOARD::::::::::::::::::::::-->
+    <div id="bingoBoard"></div>
+
+    <!--:::::::::::::::::BUTTON NUMBER FROM 1 TO 76::::::::::::::::::::::-->
+    <div class="btnContainer">
+      <input
+        id="bingoBtn"
+        type="button"
+        value="bingo"
+        onclick="console.log(buttonNumber())"
+      />
+    </div>
+    <!--:::::::::::::::::JAVASCRIPT::::::::::::::::::::::-->
+
+    <!--jbutton--->
+    <script>
+      //bingBoard--->
+      let bingoNumber = 76;
+      let bingoBoard = document.querySelectorAll('#bingoBoard');
+      /*let boingoBoard = document.querySelectorAll('#bingoBoard');
+      const child = document.createElement('div');
+      child.className = 'cell';*/
+
+      //jbutton--->
+      const buttonNumber = function () {
+        let number = Math.ceil(Math.random() * 76);
+        return number;
+      };
+
+      /*window.onload = function () {
+          const bingoNumber = numberInBoard();
+        };*/
+    </script>
+  </body>
+</html>
